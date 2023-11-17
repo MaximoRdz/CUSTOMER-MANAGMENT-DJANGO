@@ -1,5 +1,5 @@
 # CRM App with DJANGO
-**CRM** stands for "Customer Relationship Managments", it is a technology that help businesses to organize and access customer data.
+**CRM** stands for "Customer Relationship Managment", it is a technology that help businesses to organize and access customer data.
 ## Project Initialization
 ```cmd
 django-admin startproject <crm>
