@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 # pop up messages
 from django.contrib import messages
 
+from .forms import SignUpForm
 # Create your views here.
 
 def home(request):
@@ -31,4 +32,28 @@ def login_user(request):
 
 
 def logout_user(request):
-    pass
+    """
+    Log out option should appear in the nav bar only if the 
+    user is actually logged in
+    """
+    logout(request)
+    messages.success(request, "User Logged Out")
+    return redirect('home')
+
+
+def register_user(request):
+    if request.method == "POST":
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # authenticate and login
+            username = form.cleaned_data["username"]
+            password = form.cleaned_data["password1"]
+            user = authenticate(request, username=username, password=password)
+
+            login(request, user)
+            messages.success(request, "Registration Completed Successfully!")
+            return redirect('home')
+    else:
+        form = SignUpForm()
+        return render(request, 'register.html', {"form": form})
