@@ -13,7 +13,7 @@ def home(request):
     # Check if logging in 
     if request.method == 'POST':
         username = request.POST['username']
-        password = request.POST['password']    ##############
+        password = request.POST['password']    
         # authenticate
         user = authenticate(request, username=username, password=password)
         if user is not None:
