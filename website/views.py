@@ -13,12 +13,12 @@ def home(request):
     # Check if logging in 
     if request.method == 'POST':
         username = request.POST['username']
-        password = request.POST['password']
+        password = request.POST['password']    ##############
         # authenticate
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            messages.success(request, "Logg In Completed Successfully!")
+            messages.success(request, "Login Completed Successfully!")
             return redirect('home')
         else:
             messages.success(request, "There Was An Error While Logging In. \nPlease Try Again.")
@@ -44,6 +44,11 @@ def logout_user(request):
 def register_user(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
+        print(50*"- -")
+        print(form)
+        print(form.is_valid())
+        print(50*"- -")
+
         if form.is_valid():
             form.save()
             # authenticate and login
@@ -53,7 +58,12 @@ def register_user(request):
 
             login(request, user)
             messages.success(request, "Registration Completed Successfully!")
-            return redirect('home')
+            return redirect('home') 
+        # else:
+        #     form = SignUpForm()
+        #     return render(request, 'register.html', {"form": form})
     else:
         form = SignUpForm()
-        return render(request, 'register.html', {"form": form})
+    return render(request, 'register.html', {"form": form})
+    
+
