@@ -18,7 +18,7 @@ class Record(models.Model):
 
     def __str__(self):
         """Response to str(Record())"""
-        return f"First name {self.first_name} Last name {self.last_name}"
+        return f"{self.first_name} {self.last_name}"
 
 
 
