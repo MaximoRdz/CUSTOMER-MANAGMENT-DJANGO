@@ -5,6 +5,7 @@
 
     {% if user.is_authenticated %}
         <h1>Records</h1>
+        <br/>
             <table class="table table-striped table-hover table-bordered border-dark">
                 <thead class="table-warning table-bordered border-dark">
                 <tr>
@@ -23,23 +24,30 @@
                 <tbody>
                     {% if records %}
                         {% for record in records %}
-                            <tr>
-                                <td>{{ record.first_name }} {{ record.last_name }}</td>
-                                <td>{{ record.email }}</td>
-                                <td>{{ record.phone }}</td>
-                                <td>{{ record.address }}</td>
-                                <td>{{ record.city }}</td>
-                                <td>{{ record.state }}</td>
-                                <td>{{ record.zipcode }}</td>
-                                <td>{{ record.created_at }}</td>
-                                <td>{{ record.id }}</td>
-                            </tr>
+                            
+                                <tr>
+                                    
+                                    <td href="{% url 'record' record.id %}">
+                                        <a href="{% url 'record' record.id %}">
+                                            {{ record.first_name }} {{ record.last_name }}</td>
+                                        </a>
+                                    <td>{{ record.email }}</td>
+                                    <td>{{ record.phone }}</td>
+                                    <td>{{ record.address }}</td>
+                                    <td>{{ record.city }}</td>
+                                    <td>{{ record.state }}</td>
+                                    <td>{{ record.zipcode }}</td>
+                                    <td>{{ record.created_at }}</td>
+                                    <td>{{ record.id }}</td>
+                                </tr>
+                            
                         {% endfor %}
                     {% endif%}
                 </tbody>
             </table>
         
     {% else %}
+    <div class="col-md-6 offset-md-3">
         <h1>Login</h1>
         <br/>
         <form method="POST" action="{% url 'home' %}">
@@ -55,7 +63,7 @@
             <br/>
             <button type="submit" class="btn btn-secondary">Login</button>  
         </form>
+    </div>
     {% endif %}    
-
 
 {% endblock content %}
