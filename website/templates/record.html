@@ -5,18 +5,33 @@
     <h1>Customer Record</h1>   
     <br/>
     <div class="card">
-        <h5 class="card-header">{{customer_record.first_name}} {{customer_record.last_name}}</h5>
+        <h5 class="card-header">{{customer_record.first_name.capitalize}} {{customer_record.last_name.capitalize}}</h5>
         <div class="card-body">
-          <p class="card-text">
-            With supporting text below as a natural lead-in to additional content.
-            <div class="card">
                 <p>
-                    hola</p>
-            </div>
-        </p>
-          <a href="#" class="btn btn-secondary">Go somewhere</a>
-        </div>
-    </div>
+                  <strong>Name:</strong> {{customer_record.first_name.capitalize}} {{customer_record.last_name.capitalize}}
+                </p>
+                <p>
+                  <strong>Email:</strong> {{customer_record.email}}
+                </p>
+                <p>
+                  <strong>Phone:</strong> {{customer_record.phone}}
+                </p>
+                <p>
+                  <strong>Address:</strong> {{customer_record.address.title}}
+                </p>
+                <p>
+                  <strong>Zipcode:</strong> {{customer_record.zipcode}}
+                </p>
+                <p>
+                  <strong>Created At:</strong> {{customer_record.created_at}}
+                </p>
+                <p>
+                  <strong>ID:</strong> {{customer_record.id}}
+                </p>
+      </div>
 </div>
+<br/>
+<a href="{% url 'home' %}" class="btn btn-secondary">Return</a>
+<a href="{% url 'delete_record' customer_record.id%}" class="btn btn-danger">Delete</a>
 
 {% endblock content %}
