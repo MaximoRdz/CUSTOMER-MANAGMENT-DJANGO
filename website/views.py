@@ -9,6 +9,7 @@ from django.contrib import messages
 from .forms import SignUpForm
 
 from .models import Record
+from .forms import SignUpForm, AddRecordForm
 # Create your views here.
 
 def home(request):
@@ -48,10 +49,6 @@ def logout_user(request):
 def register_user(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
-        print(50*"- -")
-        print(form)
-        print(form.is_valid())
-        print(50*"- -")
 
         if form.is_valid():
             form.save()
@@ -95,4 +92,16 @@ def delete_record(request, pk):
 
 
 def add_record(request):
-    return render(request, 'add_record.html', {})
+    form = AddRecordForm(request.POST or None)
+
+    if request.user.is_authenticated:
+        if request.method == "POST":   
+            if form.is_valid():
+                add_record = form.save()
+                messages.success(request, "Record Added")
+                return redirect('home') 
+        return render(request, 'add_record.html', {"form": form})
+    else:
+        messages.success(request, "You Must Be Logged In To Manage Records")
+        return redirect('home') 
+
