@@ -1,5 +1,17 @@
 # CRM App with DJANGO
 **CRM** stands for "Customer Relationship Managment", it is a technology that help businesses to organize and access customer data.
+### Web Application Brief Summary
+#### Register
+New user can easily register filling the following form
+<img width="500" alt="user registration" src="https://github.com/MaximoRdz/CUSTOMER-MANAGMENT-DJANGO/blob/main/images/register.gif" loading="lazy">
+#### Create
+<img width="500" alt="adding user to database" src="https://github.com/MaximoRdz/CUSTOMER-MANAGMENT-DJANGO/blob/main/images/create.gif" loading="lazy">
+#### Read
+<img width="500" alt="displaying customer database" src="https://github.com/MaximoRdz/CUSTOMER-MANAGMENT-DJANGO/blob/main/images/read.gif" loading="lazy">
+#### Update
+<img width="500" alt="updating customer record" src="https://github.com/MaximoRdz/CUSTOMER-MANAGMENT-DJANGO/blob/main/images/update.gif" loading="lazy">
+#### Delete
+<img width="500" alt="deleting customer record" src="https://github.com/MaximoRdz/CUSTOMER-MANAGMENT-DJANGO/blob/main/images/delete.gif" loading="lazy">
 ## Project Initialization
 ```cmd
 django-admin startproject <crm>
