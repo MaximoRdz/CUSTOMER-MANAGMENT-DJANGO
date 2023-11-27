@@ -5,23 +5,23 @@
 New user can easily register filling the following form
 
 <img width="500" alt="user registration" src="https://github.com/MaximoRdz/CUSTOMER-MANAGMENT-DJANGO/blob/main/images/register.gif" loading="lazy">
-#### Create
 
+#### Create
 Add customer record to database
 
 <img width="500" alt="adding user to database" src="https://github.com/MaximoRdz/CUSTOMER-MANAGMENT-DJANGO/blob/main/images/create.gif" loading="lazy">
-#### Read
 
+#### Read
 Display of customer records
 
 <img width="500" alt="displaying customer database" src="https://github.com/MaximoRdz/CUSTOMER-MANAGMENT-DJANGO/blob/main/images/read.gif" loading="lazy">
-#### Update
 
+#### Update
 Update an existing customer record
 
 <img width="500" alt="updating customer record" src="https://github.com/MaximoRdz/CUSTOMER-MANAGMENT-DJANGO/blob/main/images/update.gif" loading="lazy">
-#### Delete
 
+#### Delete
 Delete a customer record
 
 <img width="500" alt="deleting customer record" src="https://github.com/MaximoRdz/CUSTOMER-MANAGMENT-DJANGO/blob/main/images/delete.gif" loading="lazy">
