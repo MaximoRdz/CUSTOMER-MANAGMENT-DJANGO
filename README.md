@@ -50,7 +50,7 @@ Changing the security settings in order to connect to mysql databases
 	        "default": {
 	        "ENGINE": "django.db.backends.mysql",
 	        "NAME": "crm_db",
-	        "USER": "root",
+	        "USER": "******",
 	        "PASSWORD": "*******",
 	        "HOST": "localhost",
 	        "PORT": "3306",
